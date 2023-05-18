@@ -1,24 +1,20 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import Kontakt from "./Pages/Kontakt";
+import Omnie from "./Pages/Omnie";
+import Portfolio from "./Pages/Portfolio";
+import Proces from "./Pages/Proces";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Portfolio />} />
+        <Route path="/proces" element={<Proces />} />
+        <Route path="/o-mnie" element={<Omnie />} />
+        <Route path="/kontakt" element={<Kontakt />} />
+      </Routes>
+    </Router>
   );
 }
 
